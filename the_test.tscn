@@ -1,11 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d26uetr45a7om"]
+[gd_scene load_steps=6 format=3 uid="uid://d26uetr45a7om"]
 
 [ext_resource type="Script" path="res://scripts/the_test.gd" id="1_e1hyk"]
 [ext_resource type="Shader" path="res://shaders/crt.gdshader" id="2_4pxto"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_fdar5"]
-line_spacing = 0.0
-font_color = Color(0, 0.94902, 0.0431373, 1)
+[ext_resource type="PackedScene" uid="uid://bq4nh3y6h4d88" path="res://objects/screen_text.tscn" id="3_5dunk"]
+[ext_resource type="Script" path="res://scripts/the_test/options.gd" id="3_20htq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yr4qf"]
 shader = ExtResource("2_4pxto")
@@ -25,35 +23,28 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.00392157, 0.0431373, 0, 1)
 
-[node name="TextAdditionTimer" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
+[node name="ScreenText" parent="." instance=ExtResource("3_5dunk")]
+unique_name_in_owner = true
 
-[node name="ScreenText" type="Label" parent="."]
-offset_left = 6.0
-offset_top = 6.0
-offset_right = 793.0
-offset_bottom = 593.0
-text = "Testing testing 123...
+[node name="Options" type="Node2D" parent="."]
+script = ExtResource("3_20htq")
 
-This is some great UI for me
-
-
-beeboopbapbeeboopbapbeeboopbapbeeboopbapbeeboopbapbeeboopbapbeeboopbapbeeboopbapbeeboopbap
-beeboopbap beeboopbapbeeboopbap beeboopbap beeboopbap beeboopbap beeboopbap beeboopbap beeboopbap beeboopbap  
-
-jingles"
-label_settings = SubResource("LabelSettings_fdar5")
-autowrap_mode = 3
-clip_text = true
-
-[node name="Noway" type="Button" parent="."]
+[node name="TwoOptions" type="Node2D" parent="Options"]
 visible = false
+
+[node name="Option1" type="Button" parent="Options/TwoOptions"]
 offset_left = 21.0
 offset_top = 476.0
-offset_right = 234.0
+offset_right = 363.0
 offset_bottom = 573.0
-text = "Heck yeah bro"
+text = "balls"
+
+[node name="Option2" type="Button" parent="Options/TwoOptions"]
+offset_left = 386.0
+offset_top = 476.0
+offset_right = 773.0
+offset_bottom = 573.0
+text = "balls 2"
 
 [node name="FlickerEffect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_yr4qf")
@@ -61,4 +52,6 @@ offset_right = 800.0
 offset_bottom = 600.0
 mouse_filter = 2
 
-[connection signal="timeout" from="TextAdditionTimer" to="." method="_on_text_addition_timer_timeout"]
+[connection signal="option_pressed" from="Options" to="." method="_on_options_option_pressed"]
+[connection signal="pressed" from="Options/TwoOptions/Option1" to="Options" method="_on_two_options_option_1_pressed"]
+[connection signal="pressed" from="Options/TwoOptions/Option2" to="Options" method="_on_two_options_option_2_pressed"]

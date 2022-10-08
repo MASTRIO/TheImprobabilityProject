@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq4nh3y6h4d88"]
+
+[ext_resource type="Script" path="res://scripts/objects/screen_text.gd" id="1_lfv7h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nglfx"]
+line_spacing = 0.0
+font_color = Color(0, 0.94902, 0.0431373, 1)
+
+[node name="ScreenText" type="Label"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 796.0
+offset_bottom = 596.0
+text = "Testing testing 123...
+
+This is some great UI for me
+
+
+beeboopbapbeeboopbapbeeboopbapbeeboopbapbeeboopbapbeeboopbapbeeboopbapbeeboopbapbeeboopbap
+beeboopbap beeboopbapbeeboopbap beeboopbap beeboopbap beeboopbap beeboopbap beeboopbap beeboopbap beeboopbap  
+
+jingles"
+label_settings = SubResource("LabelSettings_nglfx")
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("1_lfv7h")
+
+[node name="TextAdditionTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="TextAdditionTimer" to="." method="_on_text_addition_timer_timeout"]

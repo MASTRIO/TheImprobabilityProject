@@ -1,3 +1,7 @@
+res://objects/screen_text.tscn
 res://the_test.tscn
-res://shaders/crt.gdshader
-res://main_menu.tscn
+res://scripts/objects/screen_text.gd
+res://scripts/the_test.gd
+res://scripts/the_test/option_ready_to_begin.gd
+res://scripts/the_test/options.gd
+res://scripts/global/global.gd
