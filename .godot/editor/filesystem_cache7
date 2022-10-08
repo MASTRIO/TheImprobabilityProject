@@ -1,0 +1,9 @@
+0b7126e0c6e86d3ec295a72f5aa6e0bd
+::res://::1665202944
+icon.svg::CompressedTexture2D::8504212599464421022::1665197177::1665197197::1::::<><>::
+main_menu.tscn::PackedScene::759944931297778307::1665202930::0::1::::<><>::
+the_test.tscn::PackedScene::9119579048276062120::1665202930::0::1::::<><>::res://scripts/the_test.gd<>res://shaders/crt.gdshader
+::res://scripts/::1665201276
+the_test.gd::GDScript::-1::1665201276::0::1::::<>Node2D<>::
+::res://shaders/::1665202831
+crt.gdshader::Shader::-1::1665202831::0::1::::<><>::
