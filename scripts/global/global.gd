@@ -4,6 +4,8 @@ enum STORY_STAGE {
 	BEFORE_TEST,
 	STARTING_TEST,
 	MISTAKE,
-	QUESTION_1
+	QUESTION_1,
+	I_AM_ME,
+	I_DONT_KNOW
 }
-var current_story_stage = STORY_STAGE.BEFORE_TEST
+var current_story_stage = STORY_STAGE.I_DONT_KNOW

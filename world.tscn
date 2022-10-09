@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://dd0m4f0tfeusn"]
+
+[ext_resource type="PackedScene" uid="uid://d26uetr45a7om" path="res://ui/the_test.tscn" id="1_l2f73"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_topc0"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_o8iva"]
+sky_material = SubResource("ProceduralSkyMaterial_topc0")
+
+[sub_resource type="Environment" id="Environment_xdk5x"]
+background_mode = 2
+sky = SubResource("Sky_o8iva")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_lakk7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ebbfn"]
+albedo_color = Color(0.00784314, 0.0431373, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yfjpm"]
+material = SubResource("StandardMaterial3D_ebbfn")
+
+[node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xdk5x")
+
+[node name="DirectionalLight3d" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="ComputerIGuess" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.45973, 0, 0, 0, 0.504237, 0, 0, 0, 0.392418, 0, 0, 0)
+mesh = SubResource("BoxMesh_lakk7")
+
+[node name="Screen" type="MeshInstance3D" parent="ComputerIGuess"]
+transform = Transform3D(0.48, 0, 0, 0, -4.37114e-08, -0.48, 0, 1, -2.09815e-08, 0, 0, 0.530844)
+mesh = SubResource("PlaneMesh_yfjpm")
+
+[node name="Label3d" type="Label3D" parent="ComputerIGuess"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.220338, 0.408989, 0.545185)
+modulate = Color(0.129412, 0.74902, 0, 1)
+text = "Na bro i'm good"
+font_size = 12
+outline_size = 0
+
+[node name="TheTest" parent="." instance=ExtResource("1_l2f73")]
+
+[node name="Camera3d" type="Camera3D" parent="."]
+transform = Transform3D(0.984202, 0, -0.17705, 0, 1, 0, 0.17705, 0, 0.984202, -0.237013, 1.19209e-07, 0.92345)
+current = true

@@ -45,6 +45,9 @@ func set_text_addition_time():
 	text_addition_timer.wait_time = new_wait_time
 	print("Wait time set to: " + str(text_addition_timer.wait_time))
 
+func _ready():
+	clear_text()
+
 func _on_text_addition_timer_timeout():
 	if not text_buffer.is_empty():
 		text += text_buffer[0]
