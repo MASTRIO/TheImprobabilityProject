@@ -1,5 +1,7 @@
-Label3D
+Sprite2D
 Camera3D
+SubViewport
+Label3D
 MeshInstance3D
 Node2D
 Label

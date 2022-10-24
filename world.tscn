@@ -2,18 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://d26uetr45a7om" path="res://ui/the_test.tscn" id="1_l2f73"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_topc0"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0oyg1"]
 
-[sub_resource type="Sky" id="Sky_o8iva"]
-sky_material = SubResource("ProceduralSkyMaterial_topc0")
+[sub_resource type="Sky" id="Sky_wju2e"]
+sky_material = SubResource("ProceduralSkyMaterial_0oyg1")
 
 [sub_resource type="Environment" id="Environment_xdk5x"]
 background_mode = 2
-sky = SubResource("Sky_o8iva")
+sky = SubResource("Sky_wju2e")
 tonemap_mode = 2
 glow_enabled = true
+glow_bloom = 0.21
 
 [sub_resource type="BoxMesh" id="BoxMesh_lakk7"]
 
@@ -29,8 +28,9 @@ material = SubResource("StandardMaterial3D_ebbfn")
 environment = SubResource("Environment_xdk5x")
 
 [node name="DirectionalLight3d" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(-0.877861, -0.418345, -0.233125, -0.440901, 0.896029, 0.052336, 0.186993, 0.148729, -0.971037, 0, 0, 0)
 shadow_enabled = true
+directional_shadow_mode = 0
 
 [node name="ComputerIGuess" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.45973, 0, 0, 0, 0.504237, 0, 0, 0, 0.392418, 0, 0, 0)

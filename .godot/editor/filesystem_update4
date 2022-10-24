@@ -1,2 +1,6 @@
+res://ui/the_test.tscn
+res://world.tscn
+res://ui/computer_terminal.tscn
 res://objects/screen_text.tscn
+res://scripts/global/global.gd
 res://scripts/the_test.gd

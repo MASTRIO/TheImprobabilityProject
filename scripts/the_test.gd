@@ -39,7 +39,7 @@ func do_story_stage():
 		screen_text.add_text_to_buffer("Who are you.")
 		
 		await screen_text.text_buffer_empty
-		options.show_options("I am me", "I don't know")
+		options.show_options("My name is Skyler White yo", "I don't know")
 	elif Global.current_story_stage == Global.STORY_STAGE.I_AM_ME:
 		screen_text.add_text_to_buffer("")
 		screen_text.add_text_to_buffer("Input Recieved")
